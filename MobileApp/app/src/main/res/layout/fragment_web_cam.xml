@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.lzyzsd.jsbridge.BridgeWebView
+        android:id="@+id/webrtc_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.github.lzyzsd.jsbridge.BridgeWebView>
+
+    <ProgressBar
+        android:id="@+id/video_loading"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDrawable="@drawable/loading_anim"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+    </ProgressBar>
+
+</RelativeLayout>

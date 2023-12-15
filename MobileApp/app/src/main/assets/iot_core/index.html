@@ -1,0 +1,56 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="dependency/jquery-3.3.1.slim.min.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <div>
+            <button id="start-iot-button" type="button">
+                Start Iot Core
+            </button>
+
+            <button id="stop-iot-button" type="button">
+                Stop Iot Core
+            </button>
+
+            <button id="upload-data-button" type="button">
+                Upload data
+            </button>
+        </div>
+
+        <div>
+            <label>Region</label>
+            <input type="text" id="region">
+        </div>
+        <div>
+            <label>Access Key ID</label>
+            <input type="text" id="accessKeyId" placeholder="Access key id">
+        </div>
+        <div>
+            <label>Secret Access Key</label>
+            <input type="text" id="secretAccessKey" placeholder="Secret access key">
+        </div>
+        <div>
+            <label>Session Token <small>(optional)</small></label>
+            <input type="text" id="sessionToken" placeholder="Session token">
+        </div>
+        <div>
+            <label>Client Id <small>(optional)</small></label>
+            <input type="text" id="clientId" placeholder="Client id">
+        </div>
+        <div>
+            <label>EndPoint <small>(optional)</small></label>
+            <input type="text" id="endpoint" placeholder="EndPoint">
+        </div>
+        <div>
+            <label>Webrtc Metrics <small>(optional)</small></label>
+            <input type="text" id="webrtc-metrics-input">
+        </div>
+    </div>
+</div>
+<script src="dist/index.js"></script>
+</body>
+<script type="text/javascript" src="jsBridge.js"></script>
+</html>

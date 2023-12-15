@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+android {
+    signingConfigs {
+        config {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+    namespace 'com.aws.webrtc'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "webrtc.latency.test"
+        minSdk 28
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 33
+        versionCode 1
+        versionName "1.0.8"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            shrinkResources true
+            minifyEnabled true
+            manifestPlaceholders = [appName : "@string/app_name"]
+        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            manifestPlaceholders = [appName : "@string/app_name"]
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output -> {
+            def date = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08"))
+            if (variant.buildType.name == "debug") {
+                output.outputFileName = "${android.defaultConfig.applicationId}_debug_${android.defaultConfig.versionName}_${date}.apk"
+            } else if (variant.buildType.name == "release") {
+                output.outputFileName = "${android.defaultConfig.applicationId}_release_${android.defaultConfig.versionName}_${date}.apk"
+            }
+        }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.fragment:fragment:1.6.1'
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // Amplify core dependency
+    implementation 'com.amplifyframework:aws-auth-cognito:2.11.1'
+    implementation 'com.amplifyframework:aws-api:2.11.1'
+    implementation 'com.github.lzyzsd:jsbridge:1.0.4'
+}

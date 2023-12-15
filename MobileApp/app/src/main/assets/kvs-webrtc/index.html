@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>KVS WebRTC Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="viewer.css">
+    <script src="./dependency/jquery-3.3.1.slim.min.js"></script>
+    <script src="./dependency/aws-sdk-2.1363.0.min.js"></script>
+    <script src="./dependency/kvs-webrtc.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <div hidden="hidden">
+            <div>
+                <label>Region</label>
+                <input type="text" id="region" value="REPLACE_ME">
+            </div>
+            <div>
+                <label>Access Key ID</label>
+                <input type="text" id="accessKeyId" placeholder="Access key id" value="REPLACE_ME">
+            </div>
+            <div>
+                <label>Secret Access Key</label>
+                <input type="password" id="secretAccessKey" placeholder="Secret access key" value="REPLACE_ME">
+            </div>
+            <div>
+                <label>Channel Name</label>
+                <input type="text" id="channelName" placeholder="Channel" value="REPLACE_ME">
+            </div>
+        </div>
+
+        <video class="remote-video" id="remoteVideo" autoplay="" playsinline="" controls="" muted=""></video>
+    </div>
+
+    <script src="viewer.js"></script>
+    <script src="jsBridge.js"></script>
+</body>
+</html>

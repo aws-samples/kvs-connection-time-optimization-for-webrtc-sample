@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#ffec7211</color>
+    <color name="colorPrimary">#ffec7211</color>
+    <color name="colorAccent">#ffec7211</color>
+
+    // for color define
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="color_grey_200">#eaeded</color>
+    <color name="darker_grey">#ffaaaaaa</color>
+
+</resources>

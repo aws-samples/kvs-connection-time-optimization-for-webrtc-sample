@@ -1,0 +1,66 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">WebRTC TTFF</string>
+
+    <string name="prompt_password">Password</string>
+    <string name="prompt_new_password">New Password</string>
+    <string name="prompt_sign_in_succeed">Sign in succeeded</string>
+    <string name="prompt_sign_up_succeed">Confirm signUp succeeded</string>
+
+    <!--toast title-->
+    <string name="title_activity_home">Confirm</string>
+    <string name="title_activity_sign_in">Sign in</string>
+    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_forgot_password">Forgot Password</string>
+    <string name="title_activity_sign_up_confirm">Confirm Account</string>
+
+    <string name="sign_in_username">User Name</string>
+    <string name="sign_in_password">Password</string>
+    <string name="sign_in_info_missing">Missing username or password.</string>
+    <string name="sign_in_username_missing">Missing username.</string>
+    <string name="forgot_password_header">Forgot your password</string>
+    <string name="reset_password_header">Reset your password</string>
+    <string name="forgot_password_body">Set your new password with the verification code that was sent to you.</string>
+    <string name="forgot_password_button_hint">Set password</string>
+    <string name="email_address_text">Email address</string>
+
+    <string name="confirm_password">Confirm password</string>
+    <string name="confirm_password_not_same">Confirm password is different with the first</string>
+    <string name="sign_up_confirm_code">Confirmation code</string>
+    <string name="sign_up_confirm_text">Confirm</string>
+    <string name="sign_up_confirm_code_sent">A confirmation code was sent to your email address</string>
+    <string name="sign_up_confirm_enter_code">Please enter the code below to confirm your account.</string>
+    <string name="sign_up_confirm_title">Confirm your account</string>
+    <string name="sign_up_info_missing">Missing username or password.</string>
+    <string name="sign_up_confirm_info_missing">Missing username or confirm code.</string>
+
+    <string name="password_change_success">Password change succeeded.</string>
+    <string name="action_create_accounts">Create an account</string>
+
+    <!--button text display-->
+    <string name="sign_in_button_text">sign in</string>
+    <string name="sign_up_button_text">sign up</string>
+    <string name="sign_out_button_text">sign out</string>
+    <string name="confirm">confirm</string>
+
+    <!--error msg-->
+    <string name="prompt_sign_up_failed">Confirm signUp failed</string>
+    <string name="prompt_sign_in_failed">SignIn failed</string>
+
+    <!--tab text display-->
+    <array name="tab_items">
+        <item>Home</item>
+        <item>Me</item>
+    </array>
+
+    <string name="start_webrtc">start webrtc</string>
+    <string name="stop_webrtc">stop webrtc</string>
+
+    <array name="user_items">
+        <item>Photo</item>
+        <item>Account</item>
+        <item>App Version</item>
+    </array>
+
+    <string name="placeholder">placeholder</string>
+
+</resources>
