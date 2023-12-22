@@ -26,6 +26,7 @@ public class GrafanaSubStack extends SubStack<AwsKvsMetricsCdkStack, GrafanaSubS
                 .authenticationProviders(List.of("AWS_SSO"))
                 .dataSources(List.of("TIMESTREAM"))
                 .permissionType("SERVICE_MANAGED")
+                .pluginAdminEnabled(true)
                 .roleArn(rootStack.identityCenterSubStack.grafanaRole.getRoleArn())
                 .notificationDestinations(List.of("SNS"))
                 .stackSetName("Grafana")
